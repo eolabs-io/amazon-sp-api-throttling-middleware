@@ -1,0 +1,63 @@
+{
+    "name": "eolabs-io/amazon-sp-api-throttling-middleware",
+    "description": "A Laravel Middleware for throttling Amazon Sp Api endpoint calls",
+    "keywords": [
+        "eolabs-io",
+        "amazon-sp-api-throttling-middleware"
+    ],
+    "homepage": "https://github.com/eolabs-io/amazon-sp-api-throttling-middleware",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tim Hall",
+            "email": "thall@eolabs.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "*",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.46",
+        "laravel/pint": "^1.13",
+        "nunomaduro/collision": "^5.11",
+        "orchestra/testbench": "^6.0",
+        "pestphp/pest": "^1.23",
+        "pestphp/pest-plugin-laravel": "^1.4",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EolabsIo\\AmazonSpApiThrottlingMiddleware\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EolabsIo\\AmazonSpApiThrottlingMiddleware\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EolabsIo\\AmazonSpApiThrottlingMiddleware\\AmazonSpApiThrottlingMiddlewareServiceProvider"
+            ],
+            "aliases": {
+                "AmazonSpApiThrottlingMiddleware": "EolabsIo\\AmazonSpApiThrottlingMiddleware\\AmazonSpApiThrottlingMiddlewareFacade"
+            }
+        }
+    }
+}
